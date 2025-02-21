@@ -2,11 +2,11 @@
 require_once "Curso.php";
 
 // Crear estudiantes
-$est1 = new Estudiante("Juan Pérez", 101, 20);
-$est2 = new Estudiante("Ana López", 102, 22);
+$est1 = new Estudiante("Miguel Olivares", 101, 20);
+$est2 = new Estudiante("Deniss García", 102, 22);
 
 // Crear curso
-$cursoPHP = new Curso("Desarrollo en PHP", "PHP101");
+$cursoPHP = new Curso("Actividad 2 - POO", "PHP101");
 
 // Inscribir estudiantes
 $cursoPHP->inscribirEstudiante($est1);
