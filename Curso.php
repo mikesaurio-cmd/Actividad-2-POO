@@ -1,27 +1,27 @@
 <?php
 require_once "Estudiante.php";
+require_once "Profesor.php";
 
 class Curso {
     private $nombreCurso;
     private $codigoCurso;
-    private $estudiantes = [];
+    private $participantes = [];
 
-    // Constructor
     public function __construct($nombreCurso, $codigoCurso) {
         $this->nombreCurso = $nombreCurso;
         $this->codigoCurso = $codigoCurso;
     }
 
-    // Método para inscribir un estudiante
-    public function inscribirEstudiante($estudiante) {
-        $this->estudiantes[] = $estudiante;
+    // Método para agregar participantes
+    public function agregarParticipante($persona) {
+        $this->participantes[] = $persona;
     }
 
-    // Método para mostrar estudiantes inscritos
-    public function mostrarEstudiantes() {
-        echo "<h2>Estudiantes en el curso $this->nombreCurso:</h2>";
-        foreach ($this->estudiantes as $est) {
-            echo "<p>" . $est->mostrarInfo() . "</p>";
+    // Mostrar todos los participantes
+    public function mostrarParticipantes() {
+        echo "<h2>Participantes en el curso $this->nombreCurso:</h2>";
+        foreach ($this->participantes as $persona) {
+            echo "<p>" . $persona->mostrarInfo() . "</p>";
         }
     }
 }

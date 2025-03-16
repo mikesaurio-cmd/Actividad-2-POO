@@ -1,32 +1,18 @@
 <?php
-class Estudiante {
-    private $nombre;
-    private $id;
-    private $edad;
+require_once "Persona.php";
 
-    // Constructor
-    public function __construct($nombre, $id, $edad) {
-        $this->nombre = $nombre;
-        $this->id = $id;
-        $this->edad = $edad;
+// Clase Estudiante que hereda de Persona
+class Estudiante extends Persona {
+    private $carrera;
+
+    public function __construct($nombre, $id, $edad, $carrera) {
+        parent::__construct($nombre, $id, $edad);
+        $this->carrera = $carrera;
     }
 
-    // Métodos getter
-    public function getNombre() {
-        return $this->nombre;
-    }
-
-    public function getId() {
-        return $this->id;
-    }
-
-    public function getEdad() {
-        return $this->edad;
-    }
-
-    // Método para mostrar información del estudiante
+    // Método sobrescrito para incluir la carrera
     public function mostrarInfo() {
-        return "ID: $this->id, Nombre: $this->nombre, Edad: $this->edad";
+        return parent::mostrarInfo() . ", Carrera: $this->carrera";
     }
 }
 ?>
